@@ -20,7 +20,7 @@ using SwinGameSDK;
 
 /// ''' </summary>
 
-static class EndingGameController
+public static class EndingGameController
 {
 
     /// <summary>

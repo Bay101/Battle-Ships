@@ -216,8 +216,8 @@ public static class GameResources
         toDraw.X = TX;
         toDraw.Y = TY;
         toDraw.Width = TW;
-        toDraw.Height = TH;
-        SwinGame.DrawTextLines(message, Color.White, Color.Transparent, _LoadingFont, FontAlignment.AlignCenter, toDraw);
+        toDraw.Height = TH;        
+        SwinGame.DrawText(message, Color.White, Color.Transparent, _LoadingFont, FontAlignment.AlignCenter, toDraw);
         // SwinGame.DrawTextLines(message, Color.White, Color.Transparent, _LoadingFont, FontAlignment.AlignCenter, TX, TY, TW, TH)
 
         SwinGame.RefreshScreen();
@@ -271,29 +271,25 @@ public static class GameResources
 
     private static void FreeFonts()
     {
-        Font obj;
-        foreach (var obj in _Fonts.Values)
+       foreach (Font obj in _Fonts.Values)
             SwinGame.FreeFont(obj);
     }
 
     private static void FreeImages()
-    {
-        Bitmap obj;
-        foreach (var obj in _Images.Values)
+    { 
+        foreach (Bitmap obj in _Images.Values)
             SwinGame.FreeBitmap(obj);
     }
 
     private static void FreeSounds()
     {
-        SoundEffect obj;
-        foreach (var obj in _Sounds.Values)
+        foreach (SoundEffect obj in _Sounds.Values)
             Audio.FreeSoundEffect(obj);
     }
 
     private static void FreeMusic()
     {
-        Music obj;
-        foreach (var obj in _Music.Values)
+        foreach (Music obj in _Music.Values)
             Audio.FreeMusic(obj);
     }
 
