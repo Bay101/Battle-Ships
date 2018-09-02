@@ -202,7 +202,7 @@ namespace MyGame
         ///     ''' has.
         ///     ''' </summary>
         ///     ''' <returns>A Ship enumerator</returns>
-        public IEnumerator GetEnumerator()
+        public IEnumerator<Ship> GetEnumerator()
         {
             Ship[] result = new Ship[_Ships.Values.Count + 1];
             _Ships.Values.CopyTo(result, 0);
@@ -235,14 +235,14 @@ namespace MyGame
 
             switch (result.Value)
             {
-                case object _ when ResultOfAttack.Destroyed:
-                case object _ when ResultOfAttack.Hit:
+                case ResultOfAttack.Destroyed:
+                case ResultOfAttack.Hit:
                     {
                         _hits += 1;
                         break;
                     }
 
-                case object _ when ResultOfAttack.Miss:
+                case ResultOfAttack.Miss:
                     {
                         _misses += 1;
                         break;

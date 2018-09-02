@@ -7,6 +7,9 @@
 //  mask the position of the ships.
 //  </remarks>
 
+using System;
+using System.Collections.Generic;
+
 namespace MyGame
 {
     public class SeaGrid : ISeaGrid
@@ -56,11 +59,9 @@ namespace MyGame
 
         public TileView this[int x, int y]
         {
-        }
-    }
-    Endclass Unknown
-    {
-    }
+            get => this[x, y];
+        } 
+
 
 
     //  <summary>

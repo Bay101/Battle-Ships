@@ -13,7 +13,7 @@ using SwinGameSDK;
 /// ''' </summary>
 namespace MyGame
 {
-    public static class GameController
+    public class GameController
     {
         private static BattleShipsGame _theGame;
         private static Player _human;
@@ -63,7 +63,7 @@ namespace MyGame
             }
         }
 
-        public static GameController()
+        public GameController()
         {
             // bottom state will be quitting. If player exits main menu then the game is over
             _state.Push(GameState.Quitting);
@@ -370,43 +370,43 @@ namespace MyGame
 
             switch (CurrentState)
             {
-                case object GameState.ViewingMainMenu:
+                case GameState.ViewingMainMenu:
                     {
                         DrawMainMenu();
                         break;
                     }
 
-                case object GameState.ViewingGameMenu:
+                case GameState.ViewingGameMenu:
                     {
                         DrawGameMenu();
                         break;
                     }
 
-                case object GameState.AlteringSettings:
+                case GameState.AlteringSettings:
                     {
                         DrawSettings();
                         break;
                     }
 
-                case object GameState.Deploying:
+                case GameState.Deploying:
                     {
                         DrawDeployment();
                         break;
                     }
 
-                case object GameState.Discovering:
+                case GameState.Discovering:
                     {
                         DrawDiscovery();
                         break;
                     }
 
-                case object GameState.EndingGame:
+                case GameState.EndingGame:
                     {
                         DrawEndOfGame();
                         break;
                     }
 
-                case object GameState.ViewingHighScores:
+                case GameState.ViewingHighScores:
                     {
                         DrawHighScores();
                         break;
