@@ -1,6 +1,6 @@
 using System;
 using SwinGameSDK;
-using static SwinGameSDK.SwinGame; // requires mcs version 4+, 
+ // requires mcs version 4+, 
 // using SwinGameSDK.SwinGame; // requires mcs version 4+, 
 
 namespace MyGame
@@ -13,22 +13,22 @@ namespace MyGame
             SwinGame.OpenGraphicsWindow("Battle Ships", 800, 600);
 
             // Load Resources
-            LoadResources();
+            SwinGameLoadResources();
 
             SwinGame.PlayMusic(GameMusic("Background"));
 
             // Game Loop
             do
             {
-                HandleUserInput();
-                DrawScreen();
+                SwinGame.ProcessEvents();
+                SwinGame.RefreshScreen();
             }
             while (!SwinGame.WindowCloseRequested() == true | CurrentState == GameState.Quitting);
 
             SwinGame.StopMusic();
 
             // Free Resources and Close Audio, to end the program.
-            FreeResources();
+            SwinGame.FreeResources();
         }
     }
 }

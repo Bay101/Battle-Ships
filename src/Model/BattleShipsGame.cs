@@ -17,7 +17,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualBasic;
 
-namespace MyGame
+namespace MyGame.Model
 {
     public class BattleShipsGame
     {

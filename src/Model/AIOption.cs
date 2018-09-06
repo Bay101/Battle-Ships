@@ -1,4 +1,4 @@
-﻿namespace MyGame
+﻿namespace MyGame.Model
 {
     public enum AIOption
     {

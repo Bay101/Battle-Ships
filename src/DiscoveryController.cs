@@ -12,11 +12,11 @@ using System.Threading.Tasks;
 using Microsoft.VisualBasic;
 using SwinGameSDK;
 
-/// <summary>
+// <summary>
 
-/// ''' The battle phase is handled by the DiscoveryController.
+// ''' The battle phase is handled by the DiscoveryController.
 
-/// ''' </summary>
+// ''' </summary>
 namespace MyGame
 {
     public static class DiscoveryController
@@ -31,7 +31,8 @@ namespace MyGame
         ///     ''' </remarks>
         public static void HandleDiscoveryInput()
         {
-            if (SwinGame.KeyTyped(KeyCode.VK_ESCAPE))
+            if (SwinGame.KeyTyped(KeyCode.EscapeKey))
+                
                 AddNewState(GameState.ViewingGameMenu);
 
             if (SwinGame.MouseClicked(MouseButton.LeftButton))
