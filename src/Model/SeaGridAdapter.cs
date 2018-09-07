@@ -28,7 +28,7 @@ namespace MyGame.Model
         public SeaGridAdapter(SeaGrid grid)
         {
             _MyGrid = grid;
-            _MyGrid.Changed += new EventHandler(MyGrid_Changed);
+            _MyGrid.Changed += MyGrid_Changed;
         }
 
         /// <summary>

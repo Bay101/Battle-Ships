@@ -1,7 +1,7 @@
-﻿/// <summary>
-/// ''' The AIMediumPlayer is a type of AIPlayer where it will try and destroy a ship
-/// ''' if it has found a ship
-/// ''' </summary>
+﻿// <summary>
+// The AIMediumPlayer is a type of AIPlayer where it will try and destroy a ship
+// if it has found a ship
+// </summary>
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -19,11 +19,11 @@ namespace MyGame.Model
 {
     public class AIMediumPlayer : AIPlayer
     {
-        /// <summary>
-        ///     ''' Private enumarator for AI states. currently there are two states,
-        ///     ''' the AI can be searching for a ship, or if it has found a ship it will
-        ///     ''' target the same ship
-        ///     ''' </summary>
+        /* <summary>
+        //  Private enumarator for AI states. currently there are two states,
+        //  the AI can be searching for a ship, or if it has found a ship it will
+        //  target the same ship
+          </summary>*/
         private enum AIStates
         {
             Searching,
