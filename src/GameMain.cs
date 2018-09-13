@@ -9,26 +9,23 @@ namespace MyGame
     {
         public static void Main()
         {
-            // Opens a new Graphics Window
-            SwinGame.OpenGraphicsWindow("Battle Ships", 800, 600);
-
-            // Load Resources
-            LoadResources();
-
-            SwinGame.PlayMusic(GameMusic("Background"));
-
-            // Game Loop
-            do
+            //Open the game window
+            OpenGraphicsWindow("GameMain", 800, 600);
+            ShowSwinGameSplashScreen();
+            
+            //Run the game loop
+            while(false == WindowCloseRequested())
             {
-                HandleUserInput();
-                DrawScreen();
+                //Fetch the next batch of UI interaction
+                ProcessEvents();
+                
+                //Clear the screen and draw the framerate
+                ClearScreen(Color.White);
+                DrawFramerate(0,0);
+                
+                //Draw onto the screen
+                RefreshScreen(60);
             }
-            while (!SwinGame.WindowCloseRequested() == true | CurrentState == GameState.Quitting);
-
-            SwinGame.StopMusic();
-
-            // Free Resources and Close Audio, to end the program.
-            FreeResources();
         }
     }
 }
