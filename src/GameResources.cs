@@ -177,9 +177,9 @@ public static class GameResources
 	{
 		const int ANI_X = 143;
 		const int ANI_Y = 134;
-		const int ANI_W = 546;
-		const int ANI_H = 327;
-		const int ANI_V_CELL_COUNT = 6;
+		//const int ANI_W = 546;
+		//const int ANI_H = 327;
+		//const int ANI_V_CELL_COUNT = 6;
 		const int ANI_CELL_COUNT = 11;
 
 		Audio.PlaySoundEffect(_StartSound);
@@ -231,7 +231,7 @@ public static class GameResources
 		SwinGame.FreeBitmap(_Animation);
 		SwinGame.FreeBitmap(_LoaderEmpty);
 		SwinGame.FreeBitmap(_LoaderFull);
-		Audio.FreeSoundEffect(_StartSound);
+		//Audio.FreeSoundEffect(_StartSound); //allows start up when disabled
 		SwinGame.ChangeScreenSize(width, height);
 	}
 

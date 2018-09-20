@@ -31,7 +31,7 @@ public abstract class AIPlayer : Player
 			get { return _Row; }
 			set { _Row = value; }
 		}
-
+        
 		/// <summary>
 		/// The column of the shot
 		/// </summary>
@@ -53,33 +53,55 @@ public abstract class AIPlayer : Player
 			_Row = row;
 		}
 
-		/// <summary>
-		/// Check if two locations are equal
-		/// </summary>
-		/// <param name="this">location 1</param>
-		/// <param name="other">location 2</param>
-		/// <returns>true if location 1 and location 2 are at the same spot</returns>
-		public static bool operator ==(Location @this, Location other)
+       
+
+        /// <summary>
+        /// Check if two locations are equal
+        /// </summary>
+        /// <param name="this">location 1</param>
+        /// <param name="other">location 2</param>
+        /// <returns>true if location 1 and location 2 are at the same spot</returns>
+        public static bool operator ==(Location @this, Location other)
 		{
-			return !ReferenceEquals(@this, null) && !ReferenceEquals(other, null) && @this.Row == other.Row && @this.Column == other.Column;
-//			return @this != null && other != null && @this.Row == other.Row && @this.Column == other.Column;
+			//return ReferenceEquals(@this, null) && ReferenceEquals(other, null) && @this.Row == other.Row && @this.Column == other.Column;
+			return @this != null && other != null && @this.Row == other.Row && @this.Column == other.Column;
+            
+        }
+
+        public override bool Equals(object obj)
+        {
+            return base.Equals(obj);
+        }
+
+
+
+        /// <summary>
+        /// Check if two locations are not equal
+        /// </summary>
+        /// <param name="this">location 1</param>
+        /// <param name="other">location 2</param>
+        /// <returns>true if location 1 and location 2 are not at the same spot</returns>
+        public static bool operator != (Location @this, Location other)
+		{
+			//return !ReferenceEquals(@this, null) || !ReferenceEquals(other, null) || @this.Row != other.Row || @this.Column != other.Column;
+			return @this == null || other == null || @this.Row != other.Row || @this.Column != other.Column;
 		}
 
-		/// <summary>
-		/// Check if two locations are not equal
-		/// </summary>
-		/// <param name="this">location 1</param>
-		/// <param name="other">location 2</param>
-		/// <returns>true if location 1 and location 2 are not at the same spot</returns>
-		public static bool operator !=(Location @this, Location other)
-		{
-			return ReferenceEquals(@this, null) || ReferenceEquals(other, null) || @this.Row != other.Row || @this.Column != other.Column;
-			//return @this == null || other == null || @this.Row != other.Row || @this.Column != other.Column;
-		}
-	}
+      //  public override int GetHashCode()
+       // {
+       //     return base.GetHashCode();
+      //  }
+        public override int GetHashCode()
+        {
+            return 0;
+        }
+
+        
+
+    }
 
 
-	public AIPlayer(BattleShipsGame game) : base(game)
+    public AIPlayer(BattleShipsGame game) : base(game)
 	{
 	}
 
