@@ -263,6 +263,10 @@ static class UtilityFunctions
 
 
 	private static List<Sprite> _Animations = new List<Sprite>();
+
+
+    // Add animations to the splash screen
+
 	private static void AddAnimation(int row, int col, string image)
 	{
 		Sprite s = default(Sprite);

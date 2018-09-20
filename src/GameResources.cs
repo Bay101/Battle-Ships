@@ -9,15 +9,16 @@ using SwinGameSDK;
 
 public static class GameResources
 {
+    // Load image, sound, font, and music resources for the game
 
-	private static void LoadFonts()
+    private static void LoadFonts()
 	{
 		NewFont("ArialLarge", "arial.ttf", 80);
 		NewFont("Courier", "cour.ttf", 14);
 		NewFont("CourierSmall", "cour.ttf", 8);
 		NewFont("Menu", "ffaccess.ttf", 8);
 	}
-
+    
 	private static void LoadImages()
 	{
 		//Backgrounds
@@ -173,6 +174,8 @@ public static class GameResources
 		PlaySwinGameIntro();
 	}
 
+    // Play the SwinGame intro
+
 	private static void PlaySwinGameIntro()
 	{
 		const int ANI_X = 143;
@@ -235,6 +238,8 @@ public static class GameResources
 		SwinGame.ChangeScreenSize(width, height);
 	}
 
+    // Add new resources to lists
+
 	private static void NewFont(string fontName, string filename, int size)
 	{
 		_Fonts.Add(fontName, SwinGame.LoadFont(SwinGame.PathToResource(filename, ResourceKind.FontResource), size));
@@ -264,6 +269,8 @@ public static class GameResources
 	{
 		_Music.Add(musicName, Audio.LoadMusic(SwinGame.PathToResource(filename, ResourceKind.SoundResource)));
 	}
+
+    // Free resources
 
 	private static void FreeFonts()
 	{
