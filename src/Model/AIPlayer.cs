@@ -53,7 +53,7 @@ public abstract class AIPlayer : Player
 			_Row = row;
 		}
 
-       
+
 
         /// <summary>
         /// Check if two locations are equal
@@ -61,12 +61,7 @@ public abstract class AIPlayer : Player
         /// <param name="this">location 1</param>
         /// <param name="other">location 2</param>
         /// <returns>true if location 1 and location 2 are at the same spot</returns>
-        public static bool operator ==(Location @this, Location other)
-		{
-			//return ReferenceEquals(@this, null) && ReferenceEquals(other, null) && @this.Row == other.Row && @this.Column == other.Column;
-			return @this != null && other != null && @this.Row == other.Row && @this.Column == other.Column;
-            
-        }
+        public static bool operator ==(Location @this, Location other) => ReferenceEquals(@this, null) && ReferenceEquals(other, null) && @this.Row == other.Row && @this.Column == other.Column;//return @this != null && other != null && @this.Row == other.Row && @this.Column == other.Column;
 
         public override bool Equals(object obj)
         {
@@ -81,16 +76,14 @@ public abstract class AIPlayer : Player
         /// <param name="this">location 1</param>
         /// <param name="other">location 2</param>
         /// <returns>true if location 1 and location 2 are not at the same spot</returns>
-        public static bool operator != (Location @this, Location other)
-		{
-			//return !ReferenceEquals(@this, null) || !ReferenceEquals(other, null) || @this.Row != other.Row || @this.Column != other.Column;
-			return @this == null || other == null || @this.Row != other.Row || @this.Column != other.Column;
-		}
+        public static bool operator !=(Location @this, Location other) => @this == null || other == null || @this.Row != other.Row || @this.Column != other.Column;
 
-      //  public override int GetHashCode()
-       // {
-       //     return base.GetHashCode();
-      //  }
+            //return !ReferenceEquals(@this, null) || !ReferenceEquals(other, null) || @this.Row != other.Row || @this.Column != other.Column;
+            
+        //  public override int GetHashCode()
+        // {
+        //     return base.GetHashCode();
+        //  }
         public override int GetHashCode()
         {
             return 0;
@@ -101,7 +94,7 @@ public abstract class AIPlayer : Player
     }
 
 
-    public AIPlayer(BattleShipsGame game) : base(game)
+    public AIPlayer(BattleShipsGame controller) : base(controller)
 	{
 	}
 

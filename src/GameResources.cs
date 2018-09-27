@@ -283,7 +283,7 @@ public static class GameResources
 	private static void FreeSounds()
 	{		
 		foreach (SoundEffect obj in _Sounds.Values) {
-			Audio.FreeSoundEffect(obj);
+			//Audio.FreeSoundEffect(obj);
 		}
 	}
 

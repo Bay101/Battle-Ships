@@ -78,7 +78,6 @@ C:\Users\Flash\OneDrive\Documents\GitHub\Battle-Ships\bin\Debug\MyGame.exe.confi
 C:\Users\Flash\OneDrive\Documents\GitHub\Battle-Ships\bin\Debug\MyGame.exe
 C:\Users\Flash\OneDrive\Documents\GitHub\Battle-Ships\bin\Debug\MyGame.pdb
 C:\Users\Flash\OneDrive\Documents\GitHub\Battle-Ships\bin\Debug\SwinGame.dll
-C:\Users\Flash\OneDrive\Documents\GitHub\Battle-Ships\obj\x86\Debug-Windows\MyGameWin.csprojResolveAssemblyReference.cache
 C:\Users\Flash\OneDrive\Documents\GitHub\Battle-Ships\obj\x86\Debug-Windows\MyGameWin.csproj.CoreCompileInputs.cache
 C:\Users\Flash\OneDrive\Documents\GitHub\Battle-Ships\obj\x86\Debug-Windows\MyGameWin.csproj.CopyComplete
 C:\Users\Flash\OneDrive\Documents\GitHub\Battle-Ships\obj\x86\Debug-Windows\MyGame.exe
@@ -117,3 +116,4 @@ C:\Users\Flash\OneDrive\Documents\GitHub\Battle-Ships\bin\Debug\Resources\sounds
 C:\Users\Flash\OneDrive\Documents\GitHub\Battle-Ships\bin\Debug\Resources\sounds\SwinGameStart.ogg
 C:\Users\Flash\OneDrive\Documents\GitHub\Battle-Ships\bin\Debug\Resources\sounds\watershot.wav
 C:\Users\Flash\OneDrive\Documents\GitHub\Battle-Ships\bin\Debug\Resources\sounds\winner.wav
+C:\Users\Flash\OneDrive\Documents\GitHub\Battle-Ships\obj\x86\Debug-Windows\MyGameWin.csprojAssemblyReference.cache
