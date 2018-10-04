@@ -205,7 +205,6 @@ static class MenuController
             SwinGame.FillRectangle(Color.Black, btnLeft, btnTop, BUTTON_WIDTH, BUTTON_HEIGHT);
 
             SwinGame.DrawText(_menuStructure[menu][i], MENU_COLOR, Color.Black, GameResources.GameFont("Menu"), FontAlignment.AlignCenter, new Rectangle() { X = btnLeft + TEXT_OFFSET, Y = btnTop + TEXT_OFFSET, Width = BUTTON_WIDTH, Height = BUTTON_HEIGHT });
-            
 
 			if (SwinGame.MouseDown(MouseButton.LeftButton) & IsMouseOverMenu(i, level, xOffset)) {
 				SwinGame.DrawRectangle(HIGHLIGHT_COLOR, btnLeft, btnTop, BUTTON_WIDTH, BUTTON_HEIGHT);
