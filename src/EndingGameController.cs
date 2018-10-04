@@ -24,9 +24,10 @@ static class EndingGameController
 		UtilityFunctions.DrawSmallField(GameController.HumanPlayer.PlayerGrid, GameController.HumanPlayer);
 
 		if (GameController.HumanPlayer.IsDestroyed) {
-			SwinGame.DrawTextLines("YOU LOSE!", Color.White, Color.Transparent, GameResources.GameFont("ArialLarge"), FontAlignment.AlignCenter, 0, 250, SwinGame.ScreenWidth(), SwinGame.ScreenHeight());
-		} else {
-			SwinGame.DrawTextLines("-- WINNER --", Color.White, Color.Transparent, GameResources.GameFont("ArialLarge"), FontAlignment.AlignCenter, 0, 250, SwinGame.ScreenWidth(), SwinGame.ScreenHeight());
+			SwinGame.DrawText("YOU LOSE!", Color.White, Color.Transparent, GameResources.GameFont("ArialLarge"), FontAlignment.AlignCenter, new Rectangle() { X = 0, Y = 250, Width = SwinGame.ScreenWidth(), Height = SwinGame.ScreenHeight() });
+		} else {			
+            SwinGame.DrawText("-- WINNER --", Color.White, Color.Transparent, GameResources.GameFont("ArialLarge"), FontAlignment.AlignCenter, new Rectangle() { X = 0, Y = 250, Width = SwinGame.ScreenWidth(), Height = SwinGame.ScreenHeight()});
+            
 		}
 	}
 

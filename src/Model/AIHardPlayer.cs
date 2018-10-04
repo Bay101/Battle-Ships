@@ -93,7 +93,7 @@ public class AIHardPlayer : AIPlayer
 	private List<Target> _LastHit = new List<Target>();
 
 	private Target _CurrentTarget;
-	public AIHardPlayer(BattleShipsGame game) : base(game)
+	public AIHardPlayer(BattleShipsGame controller) : base(controller)
 	{
 	}
 
@@ -115,7 +115,9 @@ public class AIHardPlayer : AIPlayer
 					SearchCoords(ref row, ref column);
 					break;
 				case AIStates.TargetingShip:
-				case AIStates.HittingShip:
+                     TargetCoords(ref row, ref column);  
+                    break;   
+                case AIStates.HittingShip:
 					TargetCoords(ref row, ref column);
 					break;
 				default:
@@ -198,7 +200,7 @@ public class AIHardPlayer : AIPlayer
 		foundOriginal = false;
 
 		//i = 1, as we dont have targets from the current hit...
-		int i = 0;
+		int i = 0;  
 
 		for (i = 1; i <= ship.Hits - 1; i++) {
 			if (!foundOriginal) {

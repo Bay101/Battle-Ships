@@ -180,9 +180,9 @@ public static class GameResources
 	{
 		const int ANI_X = 143;
 		const int ANI_Y = 134;
-		const int ANI_W = 546;
-		const int ANI_H = 327;
-		const int ANI_V_CELL_COUNT = 6;
+		//const int ANI_W = 546;
+		//const int ANI_H = 327;
+		//const int ANI_V_CELL_COUNT = 6;
 		const int ANI_CELL_COUNT = 11;
 
 		Audio.PlaySoundEffect(_StartSound);
@@ -191,7 +191,7 @@ public static class GameResources
 		int i = 0;
 		for (i = 0; i <= ANI_CELL_COUNT - 1; i++) {
 			SwinGame.DrawBitmap(_Background, 0, 0);
-			SwinGame.DrawBitmapPart(_Animation, (i / ANI_V_CELL_COUNT) * ANI_W, (i % ANI_V_CELL_COUNT) * ANI_H, ANI_W, ANI_H, ANI_X, ANI_Y);
+			SwinGame.DrawBitmap(_Animation, ANI_X, ANI_Y);                
 			SwinGame.Delay(20);
 			SwinGame.RefreshScreen();
 			SwinGame.ProcessEvents();
@@ -215,9 +215,9 @@ public static class GameResources
 
 		fullW = 260 * number / STEPS;
 		SwinGame.DrawBitmap(_LoaderEmpty, BG_X, BG_Y);
-		SwinGame.DrawBitmapPart(_LoaderFull, 0, 0, fullW, 66, BG_X, BG_Y);
+		SwinGame.DrawBitmap(_LoaderFull, BG_X, BG_Y);
 
-		SwinGame.DrawTextLines(message, Color.White, Color.Transparent, _LoadingFont, FontAlignment.AlignCenter, TX, TY, TW, TH);
+		SwinGame.DrawText(message, Color.White, Color.Transparent, _LoadingFont, FontAlignment.AlignCenter, new Rectangle() { X = TX, Y = TY, Width = TW, Height = TH });
 
 		SwinGame.RefreshScreen();
 		SwinGame.ProcessEvents();
@@ -234,7 +234,7 @@ public static class GameResources
 		SwinGame.FreeBitmap(_Animation);
 		SwinGame.FreeBitmap(_LoaderEmpty);
 		SwinGame.FreeBitmap(_LoaderFull);
-		Audio.FreeSoundEffect(_StartSound);
+		//Audio.FreeSoundEffect(_StartSound); //allows start up when disabled
 		SwinGame.ChangeScreenSize(width, height);
 	}
 
@@ -252,7 +252,8 @@ public static class GameResources
 
 	private static void NewTransparentColorImage(string imageName, string fileName, Color transColor)
 	{
-		_Images.Add(imageName, SwinGame.LoadBitmap(SwinGame.PathToResource(fileName, ResourceKind.BitmapResource), true, transColor));
+        _Images.Add(imageName, SwinGame.LoadBitmap(fileName));
+        
 	}
 
 	private static void NewTransparentColourImage(string imageName, string fileName, Color transColor)
@@ -289,7 +290,7 @@ public static class GameResources
 	private static void FreeSounds()
 	{		
 		foreach (SoundEffect obj in _Sounds.Values) {
-			Audio.FreeSoundEffect(obj);
+			//Audio.FreeSoundEffect(obj);
 		}
 	}
 

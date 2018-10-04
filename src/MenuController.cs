@@ -10,7 +10,7 @@ using SwinGameSDK;
 /// <summary>
 /// The menu controller handles the drawing and user interactions
 /// from the menus in the game. These include the main menu, game
-/// menu and the settings m,enu.
+/// menu and the settings menu.
 /// </summary>
 
 static class MenuController
@@ -68,6 +68,7 @@ static class MenuController
 
 	private const int GAME_MENU_QUIT_BUTTON = 2;
 	private static readonly Color MENU_COLOR = SwinGame.RGBAColor(2, 167, 252, 255);
+    
 
 	private static readonly Color HIGHLIGHT_COLOR = SwinGame.RGBAColor(1, 57, 86, 255);
 	/// <summary>
@@ -201,8 +202,9 @@ static class MenuController
 		for (i = 0; i <= _menuStructure[menu].Length - 1; i++) {
 			int btnLeft = 0;
 			btnLeft = MENU_LEFT + BUTTON_SEP * (i + xOffset);
-			//SwinGame.FillRectangle(Color.White, btnLeft, btnTop, BUTTON_WIDTH, BUTTON_HEIGHT)
-			SwinGame.DrawText(_menuStructure[menu][i], MENU_COLOR, Color.Black, GameResources.GameFont("Menu"), FontAlignment.AlignCenter, btnLeft + TEXT_OFFSET, btnTop + TEXT_OFFSET, BUTTON_WIDTH, BUTTON_HEIGHT);
+            SwinGame.FillRectangle(Color.Black, btnLeft, btnTop, BUTTON_WIDTH, BUTTON_HEIGHT);
+
+            SwinGame.DrawText(_menuStructure[menu][i], MENU_COLOR, Color.Black, GameResources.GameFont("Menu"), FontAlignment.AlignCenter, new Rectangle() { X = btnLeft + TEXT_OFFSET, Y = btnTop + TEXT_OFFSET, Width = BUTTON_WIDTH, Height = BUTTON_HEIGHT });
 
 			if (SwinGame.MouseDown(MouseButton.LeftButton) & IsMouseOverMenu(i, level, xOffset)) {
 				SwinGame.DrawRectangle(HIGHLIGHT_COLOR, btnLeft, btnTop, BUTTON_WIDTH, BUTTON_HEIGHT);
