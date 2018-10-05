@@ -59,7 +59,7 @@ public static class GameResources
 
 	private static void LoadMusic()
 	{
-		NewMusic("Background", "horrordrone.mp3");
+		NewMusic("Background", "horrordrone.wav");
 	}
 
 	/// <summary>
@@ -246,7 +246,7 @@ public static class GameResources
 	}
 
 	private static void NewImage(string imageName, string filename)
-	{
+	{  
 		_Images.Add(imageName, SwinGame.LoadBitmap(SwinGame.PathToResource(filename, ResourceKind.BitmapResource)));
 	}
 
